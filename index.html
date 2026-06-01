@@ -1,11 +1,10 @@
-<!DOCTYPE html>
+            <!DOCTYPE html>
 <html class="light" lang="en">
 <head>
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <title>MELUVÉA | Premium Gifting & Artisanal Pastries</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <!-- Premium Serif Fonts added specifically to match image 1000299097_3.png logo layout -->
     <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Cinzel:wght@600;700&family=Manrope:wght@400;600;700&display=swap" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
     <style>
@@ -14,10 +13,9 @@
         .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
         .hero-gradient { background: linear-gradient(0deg, rgba(74, 16, 74, 0.7) 0%, rgba(0, 0, 0, 0.2) 100%); }
         body { min-height: max(884px, 100dvh); }
-        /* Identity Typography Blueprint matching the reference file */
         .brand-logo-font {
             font-family: 'Cinzel Decorative', 'Cinzel', serif;
-            letter-spacing: 0.08em;
+            letter-spacing: 0.06em;
         }
     </style>
     <script id="tailwind-config">
@@ -48,21 +46,30 @@
     <!-- HEADER NAVIGATION -->
     <header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-outline-variant/30">
         <div class="flex items-center justify-between px-margin-mobile py-3">
-            <div class="flex items-center gap-3">
+            <div class="flex items-center gap-2">
                 <button onclick="toggleMenu(true)" aria-label="Menu" class="p-1 active:scale-95 transition-transform">
                     <span class="material-symbols-outlined text-primary text-2xl">menu</span>
                 </button>
-                <!-- Exact Stylized Font Representation from Image 1000299097_3.png -->
-                <h1 class="brand-logo-font text-2xl text-primary font-bold tracking-wider leading-none">MELUVÉA</h1>
+                <h1 class="brand-logo-font text-xl text-primary font-bold tracking-wider leading-none">MELUVÉA</h1>
             </div>
             
-            <div class="flex items-center gap-3">
-                <!-- Clean, non-overlapping location layout for switcher -->
-                <select id="lang-selector-dropdown" onchange="changeLanguage(this.value)" class="text-xs border-primary/40 text-primary rounded bg-transparent py-1 px-1.5 font-bold focus:ring-1 focus:ring-primary">
+            <!-- CONTROLS: SEARCH + LANGUAGE + PROFILE -->
+            <div class="flex items-center gap-2">
+                <!-- Search Bar Container -->
+                <div class="relative flex items-center">
+                    <input type="text" id="product-search-bar" oninput="executeProductSearch(this.value)" placeholder="Search..." class="hidden w-28 text-xs border-primary/40 rounded px-2 py-1 focus:ring-1 focus:ring-primary focus:border-primary placeholder-gray-400">
+                    <button onclick="toggleSearchInputWidget()" class="p-1 text-primary active:scale-95 transition-transform" aria-label="Search">
+                        <span class="material-symbols-outlined text-2xl">search</span>
+                    </button>
+                </div>
+
+                <!-- Language Selector -->
+                <select id="lang-selector-dropdown" onchange="changeLanguage(this.value)" class="text-xs border-primary/40 text-primary rounded bg-transparent py-1 px-1 font-bold focus:ring-1 focus:ring-primary">
                     <option value="en">EN</option>
                     <option value="hi">HI</option>
                     <option value="bn">BN</option>
                 </select>
+
                 <button onclick="openProfileModal()" aria-label="Profile" class="p-1 active:scale-95 transition-transform relative">
                     <span class="material-symbols-outlined text-primary text-2xl">account_circle</span>
                     <span id="login-indicator" class="absolute top-1 right-1 w-2 h-2 bg-green-500 rounded-full hidden"></span>
@@ -90,14 +97,13 @@
     <!-- MAIN INTERACTIVE HUB -->
     <main class="pt-14">
         
-        <!-- HERO SEGMENT SHOWCASE BLOCK (Custom Tagline Inserted) -->
+        <!-- HERO SEGMENT SHOWCASE BLOCK -->
         <section class="relative h-[440px] w-full overflow-hidden bg-surface-container-low">
             <div class="absolute inset-0">
                 <img class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=600&q=80" alt="Cake Showcase"/>
                 <div class="absolute inset-0 hero-gradient"></div>
             </div>
             <div class="absolute bottom-0 left-0 p-margin-mobile pb-12 w-full text-white">
-                <!-- Requested Tagline modification -->
                 <h2 class="text-2xl font-bold text-white mb-4 leading-tight tracking-wide" id="hero-title">কম খুঁজি ,শুধু টেস্ট বুঝি</h2>
                 <button onclick="window.location.hash='#products-showcase'" class="bg-primary text-white px-5 py-3 text-xs font-bold rounded-lg active:scale-95 transition-transform tracking-wider uppercase" id="hero-btn">
                     EXPLORE COLLECTION
@@ -109,10 +115,10 @@
         <section class="py-6 bg-surface-cream" id="products-showcase">
             <div class="flex items-center justify-between px-margin-mobile mb-4">
                 <h3 class="text-base font-bold text-deep-plum" id="category-section-title">Gifting Collections</h3>
-                <span onclick="filterCategory('all')" class="text-primary uppercase text-xs font-bold tracking-wider cursor-pointer">Clear Filter</span>
+                <span onclick="resetCategoryFilter()" class="text-primary uppercase text-xs font-bold tracking-wider cursor-pointer" id="clear-filter-text">Clear Filter</span>
             </div>
             <div class="flex overflow-x-auto gap-4 px-margin-mobile hide-scrollbar snap-x" id="category-scroller-pills">
-                <!-- Loaded dynamically below -->
+                <!-- Loaded dynamically -->
             </div>
         </section>
 
@@ -129,7 +135,7 @@
             </div>
         </section>
 
-        <!-- BAKERY PRODUCT GRID (DYNAMIC LIVE FEED) -->
+        <!-- BAKERY PRODUCT GRID -->
         <section class="mb-8">
             <div class="px-margin-mobile mb-4">
                 <h3 class="text-lg font-bold text-deep-plum" id="feed-title">Bakery-Fresh Selection</h3>
@@ -137,19 +143,19 @@
             </div>
             
             <div class="grid grid-cols-2 gap-3 px-margin-mobile" id="products-grid">
-                <!-- Products loaded from JavaScript state map -->
+                <!-- Products loaded dynamically -->
             </div>
         </section>
     </main>
 
-    <!-- MOBILE SYSTEM APPLICATION FOOTER (With Verified Document Data Fields) -->
+    <!-- FOOTER WITH VERIFIED CONTACT DATA -->
     <footer class="bg-stone-900 text-gray-300 py-8 px-margin-mobile border-t border-primary/20">
         <div class="flex flex-col items-center text-center mb-6">
             <h1 class="brand-logo-font text-xl font-bold text-white tracking-widest">MELUVÉA</h1>
             <p class="text-xs text-gray-400 mt-2 max-w-[240px]">Redefining premium taste with meticulous craftsmanship.</p>
         </div>
         <div class="text-xs text-gray-300 space-y-2 border-t border-stone-800 pt-4 max-w-xs mx-auto">
-            <p class="flex items-center gap-2"><span class="material-symbols-outlined text-sm text-primary">mail</span> <a href="mailto:avitadhikary@gmail.com" class="hover:underline">avitadhikary@gmail.com</a></p>
+            <p class="flex items-center gap-2"><span class="material-symbols-outlined text-sm text-primary">mail</span> <a href="mailto:meluveaofficial@gmail.com" class="hover:underline">meluveaofficial@gmail.com</a></p>
             <p class="flex items-center gap-2"><span class="material-symbols-outlined text-sm text-primary">call</span> <a href="tel:7890967329" class="hover:underline">7890967329</a></p>
             <p class="flex items-center gap-2"><span class="material-symbols-outlined text-sm text-green-500">chat</span> <a href="https://wa.me/7003401417" class="hover:underline">WhatsApp: 7003401417</a></p>
         </div>
@@ -208,7 +214,7 @@
         </div>
     </div>
 
-    <!-- PERSISTENT MOBILE BOTTOM BUTTON BAR -->
+    <!-- PERSISTENT BOTTOM NAVIGATION BAR -->
     <nav class="fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-lg border-t border-outline-variant/30 px-6 py-2.5 flex justify-between items-center z-50 shadow-[0_-4px_20px_rgba(0,0,0,0.05)]">
         <div onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="flex flex-col items-center gap-0.5 text-primary cursor-pointer">
             <span class="material-symbols-outlined text-xl" style="font-variation-settings: 'FILL' 1;">home</span>
@@ -228,7 +234,7 @@
         </div>
     </nav>
 
-    <!-- ENGINE CONTROL HANDLERS -->
+    <!-- DATABASE AND ENGINE CONTROLLERS -->
     <script>
         const firebaseDatabaseMock = {
             translations: {
@@ -237,34 +243,37 @@
                     bannerTitle: "Freshly Baked Masterpieces", bannerSub: "Real freshly baked, delivered in 6 hours",
                     btn_signup: "Register Account", btn_login: "Sign In", prof_title: "Your Profile Dashboard",
                     prof_rv: "Recent Views", prof_wl: "Wishlist", msg_auth: "Please login to view your settings dashboard.",
-                    btn_auth: "Authenticate Identity", feedTitle: "Bakery-Fresh Selection", feedSub: "Handcrafted today by our master chefs."
+                    btn_auth: "Authenticate Identity", feedTitle: "Bakery-Fresh Selection", feedSub: "Handcrafted today by our master chefs.",
+                    clearFilter: "Clear Filter"
                 },
                 hi: {
                     heroTitle: "কম খুঁজি ,শুধু টেস্ট বুঝি", heroBtn: "कलेक्शन देखें", catTitle: "हमारी श्रेणियां",
                     bannerTitle: "ताज़ा बेक्ड आइटम", bannerSub: "असली ताज़ा बेक्ड, 6 घंटे में डिलीवरी",
                     btn_signup: "खाता पंजीकृत करें", btn_login: "साइन इन करें", prof_title: "आपका प्रोफाइल",
                     prof_rv: "हाल ही में देखा", prof_wl: "इच्छा-सूची", msg_auth: "डैशबोर्ड सेटिंग्स देखने के लिए कृपया लॉग इन करें।",
-                    btn_auth: "लॉग इन करें", feedTitle: "ताज़ा बेक्ड केक्स", feedSub: "हमारे मास्टर शेफ द्वारा आज ही तैयार किया गया।"
+                    btn_auth: "लॉग इन करें", feedTitle: "ताज़ा बेक्ड केक्स", feedSub: "हमारे मास्टर शेफ द्वारा आज ही तैयार किया गयां",
+                    clearFilter: "फ़िल्टर हटाएं"
                 },
                 bn: {
                     heroTitle: "কম খুঁজি ,শুধু টেস্ট বুঝি", heroBtn: "কালেকশন এক্সপ্লোর করুন", catTitle: "আমাদের ক্যাটাগরি",
                     bannerTitle: "তাজা বেকড কালেকশন", bannerSub: "আসল ফ্রেশ বেকড, ৬ ঘণ্টার মধ্যে ডেলিভারি",
-                    btn_signup: "অ্যাকাউন্ট তৈরি করুন", btn_login: "সাইন ইন করুন", prof_title: "আপনার প্রোফাইল",
+                    btn_signup: "অ্যাকাউন্ট তৈরি করুন", bn_login: "সাইন ইন করুন", prof_title: "আপনার প্রোফাইল",
                     prof_rv: "সাম্প্রতিক ভিউ", prof_wl: "উইশলিস্ট", msg_auth: "আপনার ড্যাশবোর্ড সেটিংস দেখতে লগইন করুন।",
-                    btn_auth: "আইডেন্টিটি ভেরিফাই করুন", feedTitle: "বেকড ফ্রেশ কালেকশন", feedSub: "আমাদের মাস্টার শেফ দ্বারা আজ তৈরি।"
+                    btn_auth: "আইডেন্টিটি ভেরিফাই করুন", feedTitle: "বেকড ফ্রেশ কালেকশন", feedSub: "আমাদের মাস্টার শেফ দ্বারা আজ তৈরি।",
+                    clearFilter: "ফিল্টার মুছুন"
                 }
             },
             categories: [
                 { id: "cakes", name: { en: "Cakes", hi: "केक्स", bn: "কেক" }, icon: "cake" },
                 { id: "chocolates", name: { en: "Chocolates", hi: "चॉकलेट्स", bn: "চকলেট" }, icon: "cookie" },
                 { id: "cookies", name: { en: "Cookies", hi: "कुकीज़", bn: "কুকিজ" }, icon: "layers" },
-                { id: "bites", name: { en: "Bites", hi: "बائটস", bn: "বাইটস" }, icon: "grain" }
+                { id: "bites", name: { en: "Bites", hi: "বাইটস", bn: "বাইটস" }, icon: "grain" }
             ],
             products: [
-                { id: "p1", category: "cakes", name: "Imperial Velvet Rose Cake", price: "₹1200", img: "https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=400&q=80" },
-                { id: "p2", category: "cakes", name: "Dreamy Bean Gateau", price: "₹950", img: "https://images.unsplash.com/photo-1565958011703-44f9829ba187?auto=format&fit=crop&w=400&q=80" },
-                { id: "p3", category: "chocolates", name: "Dark Hazelnut Ganache Pods", price: "₹650", img: "https://images.unsplash.com/photo-1548907040-4d42b52115ca?auto=format&fit=crop&w=400&q=80" },
-                { id: "p4", category: "chocolates", name: "Magenta Swirl Pralines", price: "₹750", img: "https://images.unsplash.com/photo-1511381939415-e44015466834?auto=format&fit=crop&w=400&q=80" }
+                { id: "p1", category: "cakes", name: { en: "Imperial Velvet Rose Cake", hi: "इंपीरियल वेलवेट रोज़ केक", bn: "ইম্পেরিয়াল ভেলভেট রোজ কেক" }, price: "₹1200", img: "https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=400&q=80" },
+                { id: "p2", category: "cakes", name: { en: "Dreamy Bean Gateau", hi: "ड्रीमी बीन गेटो", bn: "ড্রিমি বিন গ্যাটো" }, price: "₹950", img: "https://images.unsplash.com/photo-1565958011703-44f9829ba187?auto=format&fit=crop&w=400&q=80" },
+                { id: "p3", category: "chocolates", name: { en: "Dark Hazelnut Ganache Pods", hi: "डार्क हेज़लनट गनाश पॉड्स", bn: "ডার্ক হ্যাজেলনাট গ্যানাশ পডস" }, price: "₹650", img: "https://images.unsplash.com/photo-1548907040-4d42b52115ca?auto=format&fit=crop&w=400&q=80" },
+                { id: "p4", category: "chocolates", name: { en: "Magenta Swirl Pralines", hi: "मजेंटा स्वर्ल प्रालिंस", bn: "ম্যাজেন্টা স্বিল প্রালিন্স" }, price: "₹750", img: "https://images.unsplash.com/photo-1511381939415-e44015466834?auto=format&fit=crop&w=400&q=80" }
             ],
             capturedWishlistQueue: []
         };
@@ -272,31 +281,21 @@
         let currentSelectedLanguageCode = "en";
         let activeFilterCategoryContext = "all";
         let activeAuthorizedUserSessionObject = null;
-        let localUserRecentViewsBufferList = [];
+        let searchQueryString = "";
 
         window.addEventListener("DOMContentLoaded", () => {
-            renderLanguageLocalizedInterfaceComponents();
-            renderFilterCategoryScroller();
-            renderDynamicProductsGrid();
+            syncUIVisuals();
         });
 
         function changeLanguage(lang) {
             currentSelectedLanguageCode = lang;
-            renderLanguageLocalizedInterfaceComponents();
-            renderFilterCategoryScroller();
-            renderDynamicProductsGrid();
+            syncUIVisuals();
         }
 
-        function renderLanguageLocalizedInterfaceComponents() {
+        function syncUIVisuals() {
             const dict = firebaseDatabaseMock.translations[currentSelectedLanguageCode];
             
-            // Text updating targets
+            // Text Replacements
             document.getElementById("hero-title").innerText = dict.heroTitle;
             document.getElementById("hero-btn").innerText = dict.heroBtn.toUpperCase();
-            document.getElementById("category-section-title").innerText = dict.catTitle;
-            document.getElementById("banner-delivery-title").innerText = dict.bannerTitle;
-            document.getElementById("banner-delivery-sub").innerText = dict.bannerSub;
-            document.getElementById("feed-title").innerText = dict.feedTitle;
-            document.getElementById("feed-subtitle").innerText = dict.feedSub;
-            
-            document.getEle
+         
