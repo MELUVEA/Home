@@ -5,7 +5,7 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <title>MELUVÉA | Premium Gifting & Artisanal Pastries</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Cinzel:wght@600;700&family=Manrope:wght@400;600;700&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&display=swap" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
     <style>
         .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
@@ -13,9 +13,13 @@
         .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
         .hero-gradient { background: linear-gradient(0deg, rgba(74, 16, 74, 0.7) 0%, rgba(0, 0, 0, 0.2) 100%); }
         body { min-height: max(884px, 100dvh); }
+        
+        /* Premium Segoe Style Logo Font */
         .brand-logo-font {
-            font-family: 'Cinzel Decorative', 'Cinzel', serif;
-            letter-spacing: 0.06em;
+            font-family: 'Segoe UI', 'Segoe', system-ui, -apple-system, sans-serif;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            font-weight: 700;
         }
     </style>
     <script id="tailwind-config">
@@ -50,14 +54,14 @@
                 <button onclick="toggleMenu(true)" aria-label="Menu" class="p-1 active:scale-95 transition-transform">
                     <span class="material-symbols-outlined text-primary text-2xl">menu</span>
                 </button>
-                <h1 class="brand-logo-font text-xl text-primary font-bold tracking-wider leading-none">MELUVÉA</h1>
+                <h1 class="brand-logo-font text-xl text-primary tracking-wider leading-none">MELUVÉA</h1>
             </div>
             
             <!-- CONTROLS: SEARCH + LANGUAGE + PROFILE -->
-            <div class="flex items-center gap-2">
+            <div class="flex items-center gap-1.5">
                 <!-- Search Bar Container -->
                 <div class="relative flex items-center">
-                    <input type="text" id="product-search-bar" oninput="executeProductSearch(this.value)" placeholder="Search..." class="hidden w-28 text-xs border-primary/40 rounded px-2 py-1 focus:ring-1 focus:ring-primary focus:border-primary placeholder-gray-400">
+                    <input type="text" id="product-search-bar" oninput="executeProductSearch(this.value)" placeholder="Search..." class="hidden w-24 text-xs border-primary/40 rounded px-2 py-1 focus:ring-1 focus:ring-primary focus:border-primary placeholder-gray-400 mr-1">
                     <button onclick="toggleSearchInputWidget()" class="p-1 text-primary active:scale-95 transition-transform" aria-label="Search">
                         <span class="material-symbols-outlined text-2xl">search</span>
                     </button>
@@ -84,7 +88,7 @@
         <div class="fixed inset-y-0 left-0 max-w-full flex">
             <div class="w-64 max-w-sm bg-white shadow-xl flex flex-col transform transition ease-in-out duration-300">
                 <div class="p-4 flex items-center justify-between border-b border-gray-100">
-                    <h2 class="brand-logo-font text-xl font-bold text-primary">MELUVÉA</h2>
+                    <h2 class="brand-logo-font text-xl text-primary">MELUVÉA</h2>
                     <button onclick="toggleMenu(false)" class="text-gray-500 hover:text-gray-700">
                         <span class="material-symbols-outlined">close</span>
                     </button>
@@ -251,13 +255,13 @@
                     bannerTitle: "ताज़ा बेक्ड आइटम", bannerSub: "असली ताज़ा बेक्ड, 6 घंटे में डिलीवरी",
                     btn_signup: "खाता पंजीकृत करें", btn_login: "साइन इन करें", prof_title: "आपका प्रोफाइल",
                     prof_rv: "हाल ही में देखा", prof_wl: "इच्छा-सूची", msg_auth: "डैशबोर्ड सेटिंग्स देखने के लिए कृपया लॉग इन करें।",
-                    btn_auth: "लॉग इन करें", feedTitle: "ताज़ा बेक्ड केक्स", feedSub: "हमारे मास्टर शेफ द्वारा आज ही तैयार किया गयां",
+                    btn_auth: "लॉग इन करें", feedTitle: "ताज़ा बेक्ड केक्स", feedSub: "हमारे मास्टर शेफ द्वारा आज ही तैयार किया गया।",
                     clearFilter: "फ़िल्टर हटाएं"
                 },
                 bn: {
                     heroTitle: "কম খুঁজি ,শুধু টেস্ট বুঝি", heroBtn: "কালেকশন এক্সপ্লোর করুন", catTitle: "আমাদের ক্যাটাগরি",
                     bannerTitle: "তাজা বেকড কালেকশন", bannerSub: "আসল ফ্রেশ বেকড, ৬ ঘণ্টার মধ্যে ডেলিভারি",
-                    btn_signup: "অ্যাকাউন্ট তৈরি করুন", bn_login: "সাইন ইন করুন", prof_title: "আপনার প্রোফাইল",
+                    btn_signup: "অ্যাকাউন্ট তৈরি করুন", btn_login: "সাইন ইন করুন", prof_title: "আপনার প্রোফাইল",
                     prof_rv: "সাম্প্রতিক ভিউ", prof_wl: "উইশলিস্ট", msg_auth: "আপনার ড্যাশবোর্ড সেটিংস দেখতে লগইন করুন।",
                     btn_auth: "আইডেন্টিটি ভেরিফাই করুন", feedTitle: "বেকড ফ্রেশ কালেকশন", feedSub: "আমাদের মাস্টার শেফ দ্বারা আজ তৈরি।",
                     clearFilter: "ফিল্টার মুছুন"
@@ -272,7 +276,7 @@
             products: [
                 { id: "p1", category: "cakes", name: { en: "Imperial Velvet Rose Cake", hi: "इंपीरियल वेलवेट रोज़ केक", bn: "ইম্পেরিয়াল ভেলভেট রোজ কেক" }, price: "₹1200", img: "https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=400&q=80" },
                 { id: "p2", category: "cakes", name: { en: "Dreamy Bean Gateau", hi: "ड्रीमी बीन गेटो", bn: "ড্রিমি বিন গ্যাটো" }, price: "₹950", img: "https://images.unsplash.com/photo-1565958011703-44f9829ba187?auto=format&fit=crop&w=400&q=80" },
-                { id: "p3", category: "chocolates", name: { en: "Dark Hazelnut Ganache Pods", hi: "डार्क हेज़लनट गनाश पॉड्स", bn: "ডার্ক হ্যাজেলনাট গ্যানাশ পডস" }, price: "₹650", img: "https://images.unsplash.com/photo-1548907040-4d42b52115ca?auto=format&fit=crop&w=400&q=80" },
+                { id: "p3", category: "chocolates", name: { en: "Dark Hazelnut Ganache Pods", hi: "डार्क हेज़लनट गनाश पॉड्स", bn: "ডার্ক হ্যাзелনাট গ্যানাশ পডস" }, price: "₹650", img: "https://images.unsplash.com/photo-1548907040-4d42b52115ca?auto=format&fit=crop&w=400&q=80" },
                 { id: "p4", category: "chocolates", name: { en: "Magenta Swirl Pralines", hi: "मजेंटा स्वर्ल प्रालिंस", bn: "ম্যাজেন্টা স্বিল প্রালিন্স" }, price: "₹750", img: "https://images.unsplash.com/photo-1511381939415-e44015466834?auto=format&fit=crop&w=400&q=80" }
             ],
             capturedWishlistQueue: []
@@ -295,7 +299,5 @@
         function syncUIVisuals() {
             const dict = firebaseDatabaseMock.translations[currentSelectedLanguageCode];
             
-            // Text Replacements
             document.getElementById("hero-title").innerText = dict.heroTitle;
-            document.getElementById("hero-btn").innerText = dict.heroBtn.toUpperCase();
-         
+            document.getElementById("hero-btn").innerText = 
