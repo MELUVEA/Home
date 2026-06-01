@@ -5,14 +5,20 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <title>MELUVÉA | Premium Gifting & Artisanal Pastries</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Manrope:wght@400;600;700&display=swap" rel="stylesheet"/>
+    <!-- Premium Serif Fonts added specifically to match image 1000299097_3.png logo layout -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Cinzel:wght@600;700&family=Manrope:wght@400;600;700&display=swap" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
     <style>
         .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
         .hide-scrollbar::-webkit-scrollbar { display: none; }
         .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-        .hero-gradient { background: linear-gradient(0deg, rgba(74, 16, 74, 0.6) 0%, rgba(255, 255, 255, 0) 100%); }
+        .hero-gradient { background: linear-gradient(0deg, rgba(74, 16, 74, 0.7) 0%, rgba(0, 0, 0, 0.2) 100%); }
         body { min-height: max(884px, 100dvh); }
+        /* Identity Typography Blueprint matching the reference file */
+        .brand-logo-font {
+            font-family: 'Cinzel Decorative', 'Cinzel', serif;
+            letter-spacing: 0.08em;
+        }
     </style>
     <script id="tailwind-config">
         tailwind.config = {
@@ -20,74 +26,17 @@
             theme: {
                 extend: {
                     "colors": {
-                        "error-container": "#ffdad6",
-                        "on-error-container": "#93000a",
-                        "surface-container-lowest": "#ffffff",
-                        "primary-fixed": "#ffd7f6",
-                        "primary": "#890b8b",
-                        "on-background": "#1e1b18",
-                        "surface-container": "#f5ece7",
-                        "tertiary-container": "#6b6455",
-                        "tertiary-fixed-dim": "#cfc6b3",
-                        "error": "#ba1a1a",
-                        "surface": "#fff8f5",
-                        "secondary-fixed-dim": "#e9c349",
-                        "on-secondary-fixed-variant": "#574500",
-                        "on-tertiary-fixed-variant": "#4c4638",
-                        "primary-container": "#a630a6",
-                        "surface-container-low": "#fbf2ed",
-                        "inverse-surface": "#34302c",
-                        "luxe-gold": "#C5A028",
-                        "surface-tint": "#9e289f",
-                        "secondary-container": "#fed65b",
-                        "surface-variant": "#e9e1dc",
-                        "secondary": "#735c00",
+                        "primary": "#9e289f",
                         "deep-plum": "#4A104A",
-                        "surface-container-high": "#efe6e2",
-                        "on-primary": "#ffffff",
-                        "on-secondary-container": "#745c00",
-                        "on-primary-fixed": "#380039",
-                        "on-tertiary": "#ffffff",
-                        "on-primary-container": "#ffd7f6",
-                        "background": "#fff8f5",
-                        "outline": "#847280",
-                        "on-surface-variant": "#52424f",
-                        "surface-bright": "#fff8f5",
-                        "primary-fixed-dim": "#ffaaf6",
-                        "on-tertiary-fixed": "#1f1b10",
-                        "inverse-on-surface": "#f8efea",
-                        "tertiary": "#524c3e",
-                        "inverse-primary": "#ffaaf6",
-                        "secondary-fixed": "#ffe088",
-                        "on-primary-fixed-variant": "#800083",
-                        "surface-cream": "#F9F7F2",
                         "on-surface": "#1e1b18",
-                        "on-error": "#ffffff",
-                        "tertiary-fixed": "#ebe1cf",
-                        "surface-dim": "#e1d8d4",
-                        "outline-variant": "#d6c0d0",
-                        "surface-container-highest": "#e9e1dc",
-                        "on-secondary-fixed": "#241a00",
-                        "on-tertiary-container": "#ebe2cf",
-                        "warm-bg": "#EAE4D3",
-                        "on-secondary": "#ffffff"
+                        "background": "#fff8f5",
+                        "surface-cream": "#F9F7F2",
+                        "surface-container-low": "#fbf2ed",
+                        "outline-variant": "#d6c0d0"
                     },
-                    "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" },
-                    "spacing": { "filter-panel-width": "280px", "margin-desktop": "80px", "unit": "4px", "gutter-mobile": "16px", "gutter-desktop": "24px", "margin-mobile": "20px" },
+                    "spacing": { "margin-mobile": "20px" },
                     "fontFamily": {
-                        "label-sm": ["Manrope"], "headline-lg-mobile": ["Playfair Display"], "headline-lg": ["Playfair Display"],
-                        "display-lg": ["Playfair Display"], "body-lg": ["Manrope"], "headline-md": ["Playfair Display"],
-                        "body-md": ["Manrope"], "label-md": ["Manrope"]
-                    },
-                    "fontSize": {
-                        "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.03em", "fontWeight": "700"}],
-                        "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
-                        "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
-                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
-                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
-                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "500"}],
-                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
-                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}]
+                        "body-md": ["Manrope"]
                     }
                 },
             },
@@ -96,21 +45,20 @@
 </head>
 <body class="bg-background text-on-surface font-body-md overflow-x-hidden pb-20">
 
-    <!-- HEADER NAVIGATION (With Subline from 1000299097_2.png) -->
-    <header class="fixed top-0 left-0 right-0 z-50 bg-surface/90 backdrop-blur-md border-b border-outline-variant/30">
-        <div class="flex items-center justify-between px-margin-mobile py-2">
+    <!-- HEADER NAVIGATION -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-outline-variant/30">
+        <div class="flex items-center justify-between px-margin-mobile py-3">
             <div class="flex items-center gap-3">
                 <button onclick="toggleMenu(true)" aria-label="Menu" class="p-1 active:scale-95 transition-transform">
                     <span class="material-symbols-outlined text-primary text-2xl">menu</span>
                 </button>
-                <div class="flex flex-col">
-                    <h1 class="font-display-lg text-2xl text-deep-plum tracking-tighter font-bold leading-none">MELUVÉA</h1>
-                    <span class="text-[9px] uppercase tracking-widest text-gray-500 font-semibold mt-0.5">Cake and chocolate</span>
-                </div>
+                <!-- Exact Stylized Font Representation from Image 1000299097_3.png -->
+                <h1 class="brand-logo-font text-2xl text-primary font-bold tracking-wider leading-none">MELUVÉA</h1>
             </div>
             
-            <div class="flex items-center gap-2">
-                <select onchange="changeLanguage(this.value)" class="text-[11px] border-primary/30 text-primary rounded bg-transparent py-0.5 px-1 font-semibold focus:ring-1 focus:ring-primary">
+            <div class="flex items-center gap-3">
+                <!-- Clean, non-overlapping location layout for switcher -->
+                <select id="lang-selector-dropdown" onchange="changeLanguage(this.value)" class="text-xs border-primary/40 text-primary rounded bg-transparent py-1 px-1.5 font-bold focus:ring-1 focus:ring-primary">
                     <option value="en">EN</option>
                     <option value="hi">HI</option>
                     <option value="bn">BN</option>
@@ -129,10 +77,7 @@
         <div class="fixed inset-y-0 left-0 max-w-full flex">
             <div class="w-64 max-w-sm bg-white shadow-xl flex flex-col transform transition ease-in-out duration-300">
                 <div class="p-4 flex items-center justify-between border-b border-gray-100">
-                    <div>
-                        <h2 class="text-xl font-bold text-primary tracking-wide">MELUVÉA</h2>
-                        <p class="text-[9px] uppercase tracking-wider text-gray-400">Cake and chocolate</p>
-                    </div>
+                    <h2 class="brand-logo-font text-xl font-bold text-primary">MELUVÉA</h2>
                     <button onclick="toggleMenu(false)" class="text-gray-500 hover:text-gray-700">
                         <span class="material-symbols-outlined">close</span>
                     </button>
@@ -143,19 +88,19 @@
     </div>
 
     <!-- MAIN INTERACTIVE HUB -->
-    <main class="pt-12">
+    <main class="pt-14">
         
-        <!-- HERO SEGMENT HERO SHOWCASE BLOCK -->
-        <section class="relative h-[480px] w-full overflow-hidden bg-surface-container-low">
+        <!-- HERO SEGMENT SHOWCASE BLOCK (Custom Tagline Inserted) -->
+        <section class="relative h-[440px] w-full overflow-hidden bg-surface-container-low">
             <div class="absolute inset-0">
-                <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJG11QreNyn0c2s96DEBSSmgYwEkPreC_FKp5dHofK-Z_niAtnVxAIUg20TadDVzaNkmqJ3r1fsbZuiG_yLghIzl4t-0PNA1JAJvSksZbS8ez-c-X8xkAvarSp-cRIsg8-g_Q35doZ0KtneMd9ZKtk8AP945OKeiVWhpztR8EtHidB1jRBEb2In_LNRj4DgSp9cnzStFfKYPtz5x_bD7lVpNUCxZnA4vXUPSf9oW9jdiucknh7U0cZ3n4GxOb8AZ66oHUsOB2ouHO3" alt="Luxe Cake Showcase"/>
+                <img class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=600&q=80" alt="Cake Showcase"/>
                 <div class="absolute inset-0 hero-gradient"></div>
             </div>
-            <div class="absolute bottom-0 left-0 p-margin-mobile pb-10 w-full text-white">
-                <span class="font-label-sm text-luxe-gold uppercase tracking-[0.2em] mb-1 block">Couture Collections</span>
-                <h2 class="font-headline-lg-mobile text-2xl text-white mb-3 leading-tight" id="hero-title">The Art of Artisanal Indulgence</h2>
-                <button onclick="window.location.hash='#products-showcase'" class="bg-primary text-on-primary px-6 py-3 text-xs font-bold rounded-lg active:scale-95 transition-transform tracking-wider uppercase" id="hero-btn">
-                    SHOP THE LUXE COLLECTION
+            <div class="absolute bottom-0 left-0 p-margin-mobile pb-12 w-full text-white">
+                <!-- Requested Tagline modification -->
+                <h2 class="text-2xl font-bold text-white mb-4 leading-tight tracking-wide" id="hero-title">কম খুঁজি ,শুধু টেস্ট বুঝি</h2>
+                <button onclick="window.location.hash='#products-showcase'" class="bg-primary text-white px-5 py-3 text-xs font-bold rounded-lg active:scale-95 transition-transform tracking-wider uppercase" id="hero-btn">
+                    EXPLORE COLLECTION
                 </button>
             </div>
         </section>
@@ -163,23 +108,23 @@
         <!-- HORIZONTAL DYNAMIC CATEGORIES SEGMENT -->
         <section class="py-6 bg-surface-cream" id="products-showcase">
             <div class="flex items-center justify-between px-margin-mobile mb-4">
-                <h3 class="font-headline-md text-base font-bold text-deep-plum" id="category-section-title">Gifting Collections</h3>
-                <span onclick="filterCategory('all')" class="font-label-sm text-primary uppercase text-xs font-bold tracking-wider cursor-pointer">Clear Filter</span>
+                <h3 class="text-base font-bold text-deep-plum" id="category-section-title">Gifting Collections</h3>
+                <span onclick="filterCategory('all')" class="text-primary uppercase text-xs font-bold tracking-wider cursor-pointer">Clear Filter</span>
             </div>
             <div class="flex overflow-x-auto gap-4 px-margin-mobile hide-scrollbar snap-x" id="category-scroller-pills">
                 <!-- Loaded dynamically below -->
             </div>
         </section>
 
-        <!-- EXPRESS DELIVERY INTERACTION BANNER -->
+        <!-- 24 HOUR GENUINE DELIVERY INTERACTION BANNER -->
         <section class="px-margin-mobile mb-8">
             <div class="relative rounded-xl overflow-hidden h-24 bg-deep-plum flex items-center px-6">
                 <div class="z-10 relative">
-                    <h3 class="font-headline-md text-secondary-fixed text-base font-bold mb-0.5 text-yellow-400">Gifts in 60 Minutes</h3>
-                    <p class="text-xs text-white/80">Freshly baked, delivered instantly.</p>
+                    <h3 class="text-yellow-400 text-base font-bold mb-0.5" id="banner-delivery-title">Freshly Baked Masterpieces</h3>
+                    <p class="text-xs text-white/90" id="banner-delivery-sub">Real freshly baked, delivered in 6 hours</p>
                 </div>
                 <div class="absolute right-0 bottom-0 opacity-20">
-                    <span class="material-symbols-outlined text-7xl text-white translate-x-4 translate-y-4">bolt</span>
+                    <span class="material-symbols-outlined text-7xl text-white translate-x-4 translate-y-4">schedule</span>
                 </div>
             </div>
         </section>
@@ -187,7 +132,7 @@
         <!-- BAKERY PRODUCT GRID (DYNAMIC LIVE FEED) -->
         <section class="mb-8">
             <div class="px-margin-mobile mb-4">
-                <h3 class="font-headline-md text-lg font-bold text-deep-plum" id="feed-title">Bakery-Fresh Selection</h3>
+                <h3 class="text-lg font-bold text-deep-plum" id="feed-title">Bakery-Fresh Selection</h3>
                 <p class="text-xs text-gray-500" id="feed-subtitle">Handcrafted today by our master chefs.</p>
             </div>
             
@@ -195,36 +140,20 @@
                 <!-- Products loaded from JavaScript state map -->
             </div>
         </section>
-
-        <!-- STORIES COMPONENT OVERLAY FEED -->
-        <section class="bg-surface-container-low py-8">
-            <div class="px-margin-mobile mb-4 text-center">
-                <h3 class="font-headline-md text-base font-bold text-deep-plum">Gifting Stories</h3>
-                <p class="text-xs text-gray-500">Moments of joy curated by MELUVÉA.</p>
-            </div>
-            <div class="space-y-6 px-margin-mobile">
-                <div class="relative aspect-[4/3] rounded-xl overflow-hidden shadow-sm">
-                    <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBx4RbpZ7wGRAD6v2rQPxivEABVgC4pLrxSZLFyvltMnlrLCMWQT5BEDuXclref253OaOLQqRtesdCD1PbpVSXkaFt5l3N5GDD-IR_i50M7qbN-tehW92VbYJ1_uc04jMmCmLIx9WPDcHm3CItJGfPbFDYyrQOmEP9QLaAd5Z8XE-SQjYl8YAjt1_9NJVe1RkRg-_3o06yG1cPcCsggqntnL1hDfCcP6WdEF50nLIDqPMy0F6clRVOmi22jZU2bDjkgWp5kzHigYEtk" alt="Story Frame"/>
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
-                    <div class="absolute bottom-3 left-3 right-3 text-white">
-                        <h4 class="text-sm font-bold">A Decade of Love</h4>
-                    </div>
-                </div>
-            </div>
-        </section>
     </main>
 
-    <!-- MOBILE SYSTEM APPLICATION FOOTER -->
-    <footer class="bg-on-background text-surface-variant py-8 px-margin-mobile border-b border-gray-800">
+    <!-- MOBILE SYSTEM APPLICATION FOOTER (With Verified Document Data Fields) -->
+    <footer class="bg-stone-900 text-gray-300 py-8 px-margin-mobile border-t border-primary/20">
         <div class="flex flex-col items-center text-center mb-6">
-            <h1 class="text-xl font-bold text-white tracking-widest">MELUVÉA</h1>
-            <p class="text-xs text-gray-400 mt-2 max-w-[240px]">Redefining the art of luxury gifting with meticulous craftsmanship.</p>
+            <h1 class="brand-logo-font text-xl font-bold text-white tracking-widest">MELUVÉA</h1>
+            <p class="text-xs text-gray-400 mt-2 max-w-[240px]">Redefining premium taste with meticulous craftsmanship.</p>
         </div>
-        <div class="text-xs text-gray-400 space-y-2 border-t border-gray-800 pt-4">
-            <p class="flex items-center gap-2"><span class="material-symbols-outlined text-sm text-primary">mail</span> <a href="" id="footer-email-link"></a></p>
-            <p class="flex items-center gap-2"><span class="material-symbols-outlined text-sm text-primary">call</span> <a href="" id="footer-phone-link"></a></p>
+        <div class="text-xs text-gray-300 space-y-2 border-t border-stone-800 pt-4 max-w-xs mx-auto">
+            <p class="flex items-center gap-2"><span class="material-symbols-outlined text-sm text-primary">mail</span> <a href="mailto:avitadhikary@gmail.com" class="hover:underline">avitadhikary@gmail.com</a></p>
+            <p class="flex items-center gap-2"><span class="material-symbols-outlined text-sm text-primary">call</span> <a href="tel:7890967329" class="hover:underline">7890967329</a></p>
+            <p class="flex items-center gap-2"><span class="material-symbols-outlined text-sm text-green-500">chat</span> <a href="https://wa.me/7003401417" class="hover:underline">WhatsApp: 7003401417</a></p>
         </div>
-        <div class="text-center text-[10px] text-gray-600 mt-6" id="footer-copyright-line">
+        <div class="text-center text-[10px] text-gray-600 mt-6">
             &copy; 2026 MELUVÉA Premium Gifting. All Rights Reserved.
         </div>
     </footer>
@@ -241,11 +170,11 @@
                 <input type="text" id="reg-name" required placeholder="Full Name" class="w-full text-xs rounded border-gray-300">
                 <input type="email" id="reg-email" required placeholder="Email Address" class="w-full text-xs rounded border-gray-300">
                 <input type="tel" id="reg-phone" required placeholder="Phone Number" class="w-full text-xs rounded border-gray-300">
-                <button type="submit" class="w-full py-2 bg-primary text-white text-xs font-bold rounded uppercase tracking-wider" id="btn-submit-signup"></button>
+                <button type="submit" class="w-full py-2 bg-primary text-white text-xs font-bold rounded uppercase tracking-wider" id="btn-submit-signup">Register Account</button>
             </form>
             <form id="login-form" onsubmit="handleUserLogin(event)" class="space-y-3 hidden">
                 <input type="email" id="login-email" required placeholder="Registered Email" class="w-full text-xs rounded border-gray-300">
-                <button type="submit" class="w-full py-2 bg-primary text-white text-xs font-bold rounded uppercase tracking-wider" id="btn-submit-login"></button>
+                <button type="submit" class="w-full py-2 bg-primary text-white text-xs font-bold rounded uppercase tracking-wider" id="btn-submit-login">Sign In</button>
             </form>
         </div>
     </div>
@@ -254,7 +183,7 @@
     <div id="profile-modal" class="fixed inset-0 bg-black/60 z-50 flex items-center justify-center p-4 hidden">
         <div class="bg-white rounded-xl shadow-2xl w-full max-w-sm overflow-hidden p-5 relative">
             <button onclick="closeProfileModal()" class="absolute top-3 right-3 text-gray-400"><span class="material-symbols-outlined">close</span></button>
-            <h3 class="text-lg font-bold text-primary mb-3" id="profile-title">Your Profile</h3>
+            <h3 class="text-lg font-bold text-primary mb-3" id="profile-title">Your Profile Dashboard</h3>
             
             <div id="authenticated-profile-view" class="space-y-4 hidden">
                 <div class="bg-gray-50 p-3 rounded text-xs border space-y-1">
@@ -273,7 +202,7 @@
             </div>
 
             <div id="unauthenticated-profile-view" class="text-center py-4 space-y-3">
-                <p class="text-xs text-gray-500" id="msg-auth-required">Please login to view profile settings.</p>
+                <p class="text-xs text-gray-500" id="msg-auth-required">Please login to view your settings dashboard.</p>
                 <button onclick="openAuthModalFromProfile()" class="bg-primary text-white font-bold py-2 px-4 rounded text-xs uppercase tracking-wider" id="btn-goto-auth">Authenticate Identity</button>
             </div>
         </div>
@@ -285,14 +214,89 @@
             <span class="material-symbols-outlined text-xl" style="font-variation-settings: 'FILL' 1;">home</span>
             <span class="text-[10px] font-bold">Home</span>
         </div>
-        <div onclick="window.location.hash='#products-showcase'" class="flex flex-col items-center gap-0.5 text-on-surface-variant cursor-pointer">
+        <div onclick="window.location.hash='#products-showcase'" class="flex flex-col items-center gap-0.5 text-gray-500 cursor-pointer">
             <span class="material-symbols-outlined text-xl">explore</span>
             <span class="text-[10px]">Explore</span>
         </div>
-        <div onclick="openProfileModal()" class="flex flex-col items-center gap-0.5 text-on-surface-variant cursor-pointer">
+        <div onclick="openProfileModal()" class="flex flex-col items-center gap-0.5 text-gray-500 cursor-pointer">
             <span class="material-symbols-outlined text-xl">favorite</span>
             <span class="text-[10px]">Wishlist</span>
         </div>
-        <div onclick="openProfileModal()" class="flex flex-col items-center gap-0.5 text-on-surface-variant cursor-pointer">
+        <div onclick="openProfileModal()" class="flex flex-col items-center gap-0.5 text-gray-500 cursor-pointer">
             <span class="material-symbols-outlined text-xl">person</span>
-            <span cla# Home
+            <span class="text-[10px]">Profile</span>
+        </div>
+    </nav>
+
+    <!-- ENGINE CONTROL HANDLERS -->
+    <script>
+        const firebaseDatabaseMock = {
+            translations: {
+                en: {
+                    heroTitle: "কম খুঁজি ,শুধু টেস্ট বুঝি", heroBtn: "Explore Collection", catTitle: "Gifting Collections",
+                    bannerTitle: "Freshly Baked Masterpieces", bannerSub: "Real freshly baked, delivered in 6 hours",
+                    btn_signup: "Register Account", btn_login: "Sign In", prof_title: "Your Profile Dashboard",
+                    prof_rv: "Recent Views", prof_wl: "Wishlist", msg_auth: "Please login to view your settings dashboard.",
+                    btn_auth: "Authenticate Identity", feedTitle: "Bakery-Fresh Selection", feedSub: "Handcrafted today by our master chefs."
+                },
+                hi: {
+                    heroTitle: "কম খুঁজি ,শুধু টেস্ট বুঝি", heroBtn: "कलेक्शन देखें", catTitle: "हमारी श्रेणियां",
+                    bannerTitle: "ताज़ा बेक्ड आइटम", bannerSub: "असली ताज़ा बेक्ड, 6 घंटे में डिलीवरी",
+                    btn_signup: "खाता पंजीकृत करें", btn_login: "साइन इन करें", prof_title: "आपका प्रोफाइल",
+                    prof_rv: "हाल ही में देखा", prof_wl: "इच्छा-सूची", msg_auth: "डैशबोर्ड सेटिंग्स देखने के लिए कृपया लॉग इन करें।",
+                    btn_auth: "लॉग इन करें", feedTitle: "ताज़ा बेक्ड केक्स", feedSub: "हमारे मास्टर शेफ द्वारा आज ही तैयार किया गया।"
+                },
+                bn: {
+                    heroTitle: "কম খুঁজি ,শুধু টেস্ট বুঝি", heroBtn: "কালেকশন এক্সপ্লোর করুন", catTitle: "আমাদের ক্যাটাগরি",
+                    bannerTitle: "তাজা বেকড কালেকশন", bannerSub: "আসল ফ্রেশ বেকড, ৬ ঘণ্টার মধ্যে ডেলিভারি",
+                    btn_signup: "অ্যাকাউন্ট তৈরি করুন", btn_login: "সাইন ইন করুন", prof_title: "আপনার প্রোফাইল",
+                    prof_rv: "সাম্প্রতিক ভিউ", prof_wl: "উইশলিস্ট", msg_auth: "আপনার ড্যাশবোর্ড সেটিংস দেখতে লগইন করুন।",
+                    btn_auth: "আইডেন্টিটি ভেরিফাই করুন", feedTitle: "বেকড ফ্রেশ কালেকশন", feedSub: "আমাদের মাস্টার শেফ দ্বারা আজ তৈরি।"
+                }
+            },
+            categories: [
+                { id: "cakes", name: { en: "Cakes", hi: "केक्स", bn: "কেক" }, icon: "cake" },
+                { id: "chocolates", name: { en: "Chocolates", hi: "चॉकलेट्स", bn: "চকলেট" }, icon: "cookie" },
+                { id: "cookies", name: { en: "Cookies", hi: "कुकीज़", bn: "কুকিজ" }, icon: "layers" },
+                { id: "bites", name: { en: "Bites", hi: "बائটস", bn: "বাইটস" }, icon: "grain" }
+            ],
+            products: [
+                { id: "p1", category: "cakes", name: "Imperial Velvet Rose Cake", price: "₹1200", img: "https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=400&q=80" },
+                { id: "p2", category: "cakes", name: "Dreamy Bean Gateau", price: "₹950", img: "https://images.unsplash.com/photo-1565958011703-44f9829ba187?auto=format&fit=crop&w=400&q=80" },
+                { id: "p3", category: "chocolates", name: "Dark Hazelnut Ganache Pods", price: "₹650", img: "https://images.unsplash.com/photo-1548907040-4d42b52115ca?auto=format&fit=crop&w=400&q=80" },
+                { id: "p4", category: "chocolates", name: "Magenta Swirl Pralines", price: "₹750", img: "https://images.unsplash.com/photo-1511381939415-e44015466834?auto=format&fit=crop&w=400&q=80" }
+            ],
+            capturedWishlistQueue: []
+        };
+
+        let currentSelectedLanguageCode = "en";
+        let activeFilterCategoryContext = "all";
+        let activeAuthorizedUserSessionObject = null;
+        let localUserRecentViewsBufferList = [];
+
+        window.addEventListener("DOMContentLoaded", () => {
+            renderLanguageLocalizedInterfaceComponents();
+            renderFilterCategoryScroller();
+            renderDynamicProductsGrid();
+        });
+
+        function changeLanguage(lang) {
+            currentSelectedLanguageCode = lang;
+            renderLanguageLocalizedInterfaceComponents();
+            renderFilterCategoryScroller();
+            renderDynamicProductsGrid();
+        }
+
+        function renderLanguageLocalizedInterfaceComponents() {
+            const dict = firebaseDatabaseMock.translations[currentSelectedLanguageCode];
+            
+            // Text updating targets
+            document.getElementById("hero-title").innerText = dict.heroTitle;
+            document.getElementById("hero-btn").innerText = dict.heroBtn.toUpperCase();
+            document.getElementById("category-section-title").innerText = dict.catTitle;
+            document.getElementById("banner-delivery-title").innerText = dict.bannerTitle;
+            document.getElementById("banner-delivery-sub").innerText = dict.bannerSub;
+            document.getElementById("feed-title").innerText = dict.feedTitle;
+            document.getElementById("feed-subtitle").innerText = dict.feedSub;
+            
+            document.getEle
